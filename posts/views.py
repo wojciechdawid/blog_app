@@ -1,10 +1,12 @@
 from django.core.paginator import Paginator
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
+from django.utils.translation import gettext as _
 
 from posts.models import Post, Category
 from .forms import PostForm
@@ -104,3 +106,7 @@ class CategoryCreate(CreateView):
     model = Category
     fields = ["name", "description"]
 
+
+def my_view(request):
+    output = _("Welcome to my site.")
+    return HttpResponse(output)

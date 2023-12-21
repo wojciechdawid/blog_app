@@ -18,5 +18,6 @@ urlpatterns = [
     path("posts/add/", views.PostAdd.as_view(), name="add"),
 
     path("categories/", views.CategoriesList.as_view(), name="categories"),
-    path("categories/add", views.CategoryCreate.as_view(), name="create-category")
+    path("categories/add", views.CategoryCreate.as_view(), name="create-category"),
+    path("myview/", views.my_view, name="translation_example")
 ]
