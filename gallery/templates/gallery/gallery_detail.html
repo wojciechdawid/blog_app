@@ -5,13 +5,13 @@
 
 {% block content %}
     <h1>{{ object.title|scream }}</h1>
-    <p>{{ object.content|upper|linebreaks }}</p>
 
-    <p> Random number = {% random_number %}</p>
-    <p><img src="{{ object.standout_image.url }}" width="30%"></p>
+    {%  for image in object.picture_set.all %}
     <p>
-    {% thumbnail object.standout_image "250" crop="center" as im %}
+    {% thumbnail image.img "250" crop="center" as im %}
         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
     {% endthumbnail %}
     </p>
+    {%  endfor %}
+
 {% endblock %}

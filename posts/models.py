@@ -30,6 +30,7 @@ class Post(TimestampedModel):
     published = models.BooleanField(default=False)
     likes = models.IntegerField(default=0)
     category = models.ForeignKey(Category, related_name="posts", on_delete=models.CASCADE, default=1)
+    standout_image = models.ImageField(upload_to="posts/", blank=True, null=True)
 
     def __str__(self):
         return self.title

@@ -1,3 +1,6 @@
+django
 django-crispy-forms
 crispy-bootstrap5
 factory_boy
+pillow
+sorl-thumbnail
